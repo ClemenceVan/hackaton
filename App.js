@@ -13,45 +13,50 @@ export default function App() {
     };
     return (
         <View style={styles.container}>
-            <View style={styles.btnContainer}>
-                <View style={styles.btnContainerMiddle}>
                     <TouchableOpacity
                         onPress={() => handleClick(1)}
                         style={[
-                            styles.button,
-                            {position: 'absolute', left: -100, top: 0, backgroundColor: '#4169E1'},
+                            styles.button, {
+                                position: 'absolute',
+                                left: 0,
+                                top: 200,
+                                backgroundColor: '#4169E1'
+                            },
                         ]}>
-                        <Text>1</Text>
+                        <Text>Localisation</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => handleClick(2)}
-                        style={[styles.button, {backgroundColor: '#00FF00'}]}>
-                        <Text>2</Text>
+                        style={[styles.button, {
+                            position: 'absolute',
+                            left: 0,
+                            bottom: 200,
+                            backgroundColor: '#FFC0CB'}]}>
+                        <Text>Appel</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => handleClick(3)}
-                        style={[styles.button, {
-                            position: 'absolute',
-                            left: 100,
-                            top: 0,
-                            backgroundColor: '#FFFF00',
-                        }]}>
-                        <Text>3</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.btnContainerMiddle}>
-                    <TouchableOpacity
-                        onPress={() => handleClick(5)}
                         style={[
-                            styles.button,
-                            {
-                                position: 'absolute', left: -100, bottom: 0, backgroundColor: '#FF00FF',
+                            styles.button, {
+                            position: 'absolute',
+                            right: 0,
+                            top: 200,
+                            backgroundColor: '#EE82EE',
+                        }]}>
+                        <Text>SMS</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => handleClick(4)}
+                        style={[
+                            styles.button, {
+                                position: 'absolute',
+                                right: 0,
+                                bottom: 200,
+                                backgroundColor: '#ADD8E6',
                             },
                         ]}>
-                        <Text>5</Text>
+                        <Text>Répertoire</Text>
                     </TouchableOpacity>
-                </View>
-            </View>
         </View>
     );
 }
@@ -60,29 +65,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
-    },
-    btnContainer: {
-        // flex: 1,
-        justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: 'grey',
-        padding: 8,
-        width: 400,
-        height: 400,
-        borderRadius: 100,
-        alignItems: 'center',
-    },
-    btnContainerMiddle: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: "center",
+        height: 50,
+        backgroundColor: 'black',
     },
     button: {
-        margin: 10,
+        padding: 10,
+        margin: 40,
         width: 140,
         height: 140,
-        borderRadius: 100,
+        borderRadius: 40,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: "center",
     },
 });
