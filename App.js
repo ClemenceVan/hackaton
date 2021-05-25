@@ -1,62 +1,59 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import Constants from 'expo-constants';
-
-// You can import from local files
-
-// or any pure javascript modules available in npm
-import {Card} from 'react-native-paper';
+import {Text, Image, View, StyleSheet, TouchableOpacity, Button} from 'react-native';
 
 export default function App() {
-    const handleClick = (num) => {
-        alert(`${num} clicked`);
-    };
     return (
         <View style={styles.container}>
-                    <TouchableOpacity
-                        onPress={() => handleClick(1)}
-                        style={[
-                            styles.button, {
-                                position: 'absolute',
-                                left: 0,
-                                top: 200,
-                                backgroundColor: '#4169E1'
-                            },
-                        ]}>
-                        <Text>Localisation</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => handleClick(2)}
-                        style={[styles.button, {
-                            position: 'absolute',
-                            left: 0,
-                            bottom: 200,
-                            backgroundColor: '#FFC0CB'}]}>
-                        <Text>Appel</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => handleClick(3)}
-                        style={[
-                            styles.button, {
-                            position: 'absolute',
-                            right: 0,
-                            top: 200,
-                            backgroundColor: '#EE82EE',
-                        }]}>
-                        <Text>SMS</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => handleClick(4)}
-                        style={[
-                            styles.button, {
-                                position: 'absolute',
-                                right: 0,
-                                bottom: 200,
-                                backgroundColor: '#ADD8E6',
-                            },
-                        ]}>
-                        <Text>Répertoire</Text>
-                    </TouchableOpacity>
+            <View style={styles.title}>
+                <Text style={{color: 'white', fontSize: 40}}>SecureKeys</Text>
+            </View>
+            <View style={styles.question_mark}>
+                <Text style={{color: 'white', fontSize: 40}}>?</Text>
+            </View>
+            <TouchableOpacity
+                style={[
+                    styles.button, {
+                        position: 'absolute',
+                        left: 0,
+                        top: 200,
+                        backgroundColor: '#4169E1'
+                    },
+                ]}>
+                <Text>Localisation</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[styles.button, {
+                    position: 'absolute',
+                    left: 0,
+                    bottom: 200,
+                    backgroundColor: '#FFC0CB'
+                }]}>
+                <Text>Appel</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[
+                    styles.button, {
+                        position: 'absolute',
+                        right: 0,
+                        top: 200,
+                        backgroundColor: '#EE82EE',
+                    }]}>
+                <Text>SMS</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[
+                    styles.button, {
+                        position: 'absolute',
+                        right: 0,
+                        bottom: 200,
+                        backgroundColor: '#ADD8E6',
+                    },
+                ]}>
+                <Text>Répertoire</Text>
+            </TouchableOpacity>
+            <View style={styles.credit}>
+                <Text style={{color: 'white', fontSize: 20}}>Hackathon 2021</Text>
+            </View>
         </View>
     );
 }
@@ -77,5 +74,31 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         justifyContent: 'center',
         alignItems: "center",
+    },
+    title: {
+        flex: 1,
+        padding: 10,
+        alignItems: "center",
+        margin: 40,
+    },
+    credit: {
+        alignItems: "center",
+        justifyContent: 'center',
+        bottom: 0,
+        left: 100,
+        margin: 20,
+    },
+    question_mark: {
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        bottom: 0,
+        left: 0,
+        margin: 20,
+        alignItems: "center",
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderRadius: 30,
+        borderColor: 'white',
     },
 });
